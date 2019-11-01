@@ -12,6 +12,8 @@ class Skill extends Model
         'category_name', 
         'skill_description',
     ];
+
+    protected $table = 'skills';
     
  
     public function skillEntry()

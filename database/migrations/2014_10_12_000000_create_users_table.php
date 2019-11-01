@@ -14,16 +14,20 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name');
+            $table->bigIncrements('id',101);
+            $table->string('name',80);
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            
             $table->unsignedBigInteger('department_id');
             $table->unsignedBigInteger('appraiser_id');
             $table->rememberToken();
             $table->timestamps();
+            //DB::update("ALTER TABLE tests AUTO_INCREMENT = 7000;");
+           // $table->foreign('department_id')->references('id')->on('departments');
+           // $table->foreign('appraiser_id')->references('id')->on('appraisers');
+            
+           
         });
     }
 

@@ -17,8 +17,13 @@ class CreateSkillEntriesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('skill_id');
             $table->unsignedBigInteger('rating_id');
-            $table->unsignedBigInteger('staff_id');
+            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('appraiser_id');
+
+            //$table->foreign('skill_id')->references('id')->on('skills');
+           // $table->foreign('rating_id')->references('id')->on('ratings');
+            //$table->foreign('user_id')->references('id')->on('users');
+            //$table->foreign('appraiser_id')->references('id')->on('appraisers');
             $table->timestamps();
         });
     }

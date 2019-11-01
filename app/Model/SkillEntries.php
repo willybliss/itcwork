@@ -8,13 +8,15 @@ class SkillEntries extends Model
 {
     //
 
+    protected $table = 'skills_entry';
+
     protected $fillable = [
         'skill_id',
         'rating_id',
         'user_id',
         'evaluator_id', 
     ];
-    public function skills()
+    /*public function skills()
     {
   
             return $this->hasMany('App\Model\Skill');
@@ -32,5 +34,5 @@ class SkillEntries extends Model
     public function user()
     {
         return $this->belongsTo('App\Model\User');
-    }
+    }*/
 }

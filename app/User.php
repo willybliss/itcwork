@@ -15,6 +15,8 @@ class User extends Authenticatable
      *
      * @var array
      */
+     protected $table = 'staff';
+
     protected $fillable = [
         'name', 'email', 'password',
     ];
@@ -45,6 +47,10 @@ class User extends Authenticatable
     }
     public function department()
     {
-        return $this->hasMany('App\Model\Department');
+        return $this->hasOne('App\Model\Department');
+    }
+    public function appraisers()
+    {
+        return $this->hasMany('App\Model\Appraiser');
     }
 }

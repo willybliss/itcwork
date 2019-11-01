@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Appraiser extends Model
 {
     //
+    
+    protected $table = 'evaluator';
+
     protected $fillable = [
         'name', 'email', 'password',
     ];
